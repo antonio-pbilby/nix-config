@@ -32,6 +32,7 @@
             fzf
             kubectl
             kustomize
+            k9s
           ];
 
           shellHook = ''
