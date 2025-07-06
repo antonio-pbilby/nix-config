@@ -28,6 +28,7 @@
           packages = with pkgs; [
             zsh
             go
+            gopls
             fnm
             starship
             fzf
