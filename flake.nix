@@ -30,10 +30,18 @@
             go
             fnm
             starship
+            fzf
+            kubectl
+            kustomize
           ];
 
           shellHook = ''
+            grep -qxF 'eval "$(starship init zsh)"' $HOME/.zshrc || echo 'eval "$(starship init zsh)"' >> $HOME/.zshrc
+            grep -qxF 'eval "$(fnm env --use-on-cd --shell zsh)"' $HOME/.zshrc || echo 'eval "$(fnm env --use-on-cd --shell zsh)"' >> $HOME/.zshrc
+
             exec "${pkgs.zsh}/bin/zsh"
+            echo $HOME
+            cd $HOME
           '';
         };
       });
